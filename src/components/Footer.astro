@@ -1,0 +1,129 @@
+---
+---
+
+<footer class="footer">
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img src="/images/logo-2.png" alt="Sincronia Inmobiliaria Logo" class="logo" />
+      </div>
+      <div class="footer-links">
+        <h4 class="footer-title">Enlaces</h4>
+        <ul>
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#">Servicios</a></li>
+          <li><a href="#">Nosotros</a></li>
+          <li><a href="#">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4 class="footer-title">Contacto</h4>
+        <p>Dirección: Calle Principal #123, Ciudad</p>
+        <p>Teléfono: +57 300 123 4567</p>
+        <p>Email: info@sincronia.com</p>
+      </div>
+      <div class="footer-social">
+        <h4 class="footer-title">Síguenos</h4>
+        <div class="social-icons">
+          <a href="#" target="_blank" rel="noopener noreferrer"><img src="/images/facebook.svg" alt="Facebook" /></a>
+          <a href="#" target="_blank" rel="noopener noreferrer"><img src="/images/instagram.svg" alt="Instagram" /></a>
+          <a href="#" target="_blank" rel="noopener noreferrer"><img src="/images/twitter.svg" alt="Twitter" /></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; {new Date().getFullYear()} Sincronia Inmobiliaria. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+  
+  <style>
+    .footer {
+      background-color: #333;
+      color: #fff;
+      padding: 40px 20px;
+      font-family: 'Arial', sans-serif;
+    }
+  
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      align-items: start;
+    }
+  
+    .footer-logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .logo {
+      max-width: 150px;
+      height: auto;
+    }
+  
+    .footer-links ul,
+    .footer-contact ul {
+      list-style: none;
+      padding: 0;
+    }
+  
+    .footer-links a,
+    .footer-contact a {
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+  
+    .footer-links a:hover,
+    .footer-contact a:hover {
+      color: #84c3a8;
+    }
+  
+    .footer-title {
+      color: #84c3a8;
+      margin-bottom: 15px;
+      font-size: 1.2rem;
+    }
+  
+    .footer-links li,
+    .footer-contact p {
+      margin-bottom: 10px;
+    }
+  
+    .footer-social .social-icons {
+      display: flex;
+      gap: 15px;
+    }
+  
+    .footer-social .social-icons img {
+      width: 30px;
+      height: 30px;
+      transition: transform 0.3s ease;
+    }
+  
+    .footer-social .social-icons img:hover {
+      transform: translateY(-3px);
+    }
+  
+    .footer-bottom {
+      text-align: center;
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px solid #555;
+    }
+  
+    /* Media Queries for Responsiveness */
+    @media (max-width: 768px) {
+      .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+  
+      .footer-logo {
+        justify-content: center;
+      }
+    }
+  </style>
+  

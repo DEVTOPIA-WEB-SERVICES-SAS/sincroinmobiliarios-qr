@@ -1,0 +1,47 @@
+---
+const contacts = [
+  {
+    title: 'Ventas',
+    phone: '+573101234567',
+  },
+  {
+    title: 'Soporte',
+    phone: '+573118765432',
+  },
+];
+---
+
+<div class="contact-cards">
+  {contacts.map((contact) => (
+    <div class="card">
+      <h3>{contact.title}</h3>
+      <a href={`tel:${contact.phone}`}>{contact.phone}</a>
+    </div>
+  ))}
+</div>
+
+<style>
+  .contact-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .card {
+    border: 1px solid #ccc;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .card h3 {
+    margin-bottom: 10px;
+  }
+
+  .card a {
+    color: #007bff;
+    text-decoration: none;
+  }
+</style>

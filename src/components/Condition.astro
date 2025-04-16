@@ -1,0 +1,24 @@
+---
+const { imageSrc = '/images/image.png' } = Astro.props;
+---
+
+<div class="conditions">
+  <img src={imageSrc} alt="Imagen de condiciones" class="conditions-image" />
+</div>
+
+<style>
+  .conditions {
+    width: 100%;
+    height: 80vh; /* Ajusta la altura según tus necesidades */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .conditions-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Ajusta cómo la imagen se ajusta al contenedor */
+  }
+</style>

@@ -1,0 +1,307 @@
+---
+const properties = [
+  {
+    image: "/images/service1.jpg",
+
+    alt: "Propiedad en venta 1",
+  },
+
+  {
+    image: "/images/service2.webp",
+
+    alt: "Propiedad en venta 2",
+  },
+
+  {
+    image: "/images/service3.jpg",
+
+    alt: "Propiedad en venta 3",
+  },
+
+  // Agrega más propiedades según sea necesario
+];
+---
+
+<div class="properties-carousel">
+  <h2>Propiedades en Venta</h2>
+
+  <div class="carousel-container">
+    <button class="prev-button" aria-label="Propiedad Anterior">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+      >
+        <path d="M15.41 7.41L10.83 12l4.58 4.59L14 18l-6-6 6-6 1.41 1.41z"
+        ></path>
+      </svg>
+    </button>
+
+    <div class="carousel" role="region" aria-label="Carrusel de propiedades">
+      {
+        properties.map((property) => (
+          <div class="carousel-item">
+            <img src={property.image} alt={property.alt} loading="lazy" />
+          </div>
+        ))
+      }
+    </div>
+
+    <button class="next-button" aria-label="Propiedad Siguiente">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+      >
+        <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"></path>
+      </svg>
+    </button>
+  </div>
+
+  <div class="carousel-dots">
+    {
+      properties.map((_, index) => (
+        <button
+          class={`dot ${index === 0 ? "active" : ""}`}
+          aria-label={`Ir a la propiedad ${index + 1}`}
+        />
+      ))
+    }
+  </div>
+</div>
+
+<style>
+  .properties-carousel {
+    width: 90%;
+
+    max-width: 1200px;
+
+    overflow: hidden;
+
+    padding: 20px;
+
+    margin: 0 auto;
+
+    border-radius: 10px;
+  }
+
+  .carousel-container {
+    display: flex;
+
+    align-items: center;
+
+    position: relative;
+
+    width: 100%;
+
+    justify-content: center;
+
+    padding: 0 50px;
+  }
+
+  .carousel {
+    display: flex;
+
+    transition: transform 0.5s ease-in-out;
+
+    width: 100%;
+
+    overflow: hidden;
+  }
+
+  .carousel-item {
+    flex: 0 0 33.33%;
+
+    max-width: 33.33%;
+
+    padding: 0 10px;
+
+    box-sizing: border-box;
+  }
+
+  .carousel-item img {
+    width: 100%;
+
+    height: auto;
+
+    object-fit: cover;
+
+    display: block;
+
+    border-radius: 8px;
+  }
+
+  .prev-button,
+  .next-button {
+    background: none;
+
+    border: none;
+
+    font-size: 1.5rem;
+
+    cursor: pointer;
+
+    padding: 5px 10px;
+
+    position: absolute;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 40px;
+
+    height: 40px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    z-index: 3;
+
+    transition: all 0.3s ease;
+  }
+
+  .prev-button {
+    left: 0;
+  }
+
+  .next-button {
+    right: 0;
+  }
+
+  .prev-button:hover,
+  .next-button:hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  .prev-button svg,
+  .next-button svg {
+    width: 30px;
+
+    height: 30px;
+
+    fill: #333;
+
+    transition: fill 0.3s ease;
+  }
+
+  .prev-button:hover svg,
+  .next-button:hover svg {
+    fill: #000;
+
+    transform: scale(1.1);
+  }
+
+  .carousel-dots {
+    display: flex;
+
+    justify-content: center;
+
+    margin-top: 10px;
+  }
+
+  .dot {
+    width: 10px;
+
+    height: 10px;
+
+    border-radius: 50%;
+
+    background-color: #ccc;
+
+    border: none;
+
+    margin: 0 5px;
+
+    cursor: pointer;
+  }
+
+  .dot.active {
+    background-color: #333;
+  }
+</style>
+
+<script>
+  const carousel = document.querySelector(".carousel");
+
+  const carouselItems = document.querySelectorAll(".carousel-item");
+
+  const prevButton = document.querySelector(".prev-button");
+
+  const nextButton = document.querySelector(".next-button");
+
+  const dots = document.querySelectorAll(".dot");
+
+  const carouselContainer = document.querySelector(".carousel-container");
+
+  if (carousel && carouselItems.length > 0) {
+    let counter = 0;
+
+    let size = (carouselItems[0] as HTMLElement).offsetWidth;
+
+    let maxTranslate = (carouselContainer as HTMLElement).offsetWidth - size;
+
+    (carousel as HTMLElement).style.transform =
+      `translateX(${-size * counter}px)`;
+
+    function moveCarousel() {
+      (carousel as HTMLElement).style.transition = "transform 0.5s ease-in-out";
+
+      let translateValue = -size * counter;
+
+      if (translateValue < -maxTranslate) {
+        translateValue = -maxTranslate;
+      }
+
+      (carousel as HTMLElement).style.transform =
+        `translateX(${translateValue}px)`;
+    }
+
+    function updateDots() {
+      dots.forEach((dot, index) => {
+        dot.classList.remove("active");
+
+        if (index === counter) {
+          dot.classList.add("active");
+        }
+      });
+    }
+
+    if (prevButton) {
+      prevButton.addEventListener("click", () => {
+        if (counter <= 0) return;
+
+        counter--;
+
+        moveCarousel();
+
+        updateDots();
+      });
+    }
+
+    if (nextButton) {
+      nextButton.addEventListener("click", () => {
+        if (counter >= carouselItems.length - 1) return;
+
+        counter++;
+
+        moveCarousel();
+
+        updateDots();
+      });
+    }
+
+    dots.forEach((dot, index) => {
+      dot.addEventListener("click", () => {
+        counter = index;
+
+        moveCarousel();
+
+        updateDots();
+      });
+    });
+  }
+</script>

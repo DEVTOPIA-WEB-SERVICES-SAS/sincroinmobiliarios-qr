@@ -1,0 +1,27 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import Description from '../components/Description.astro';
+import Services from '../components/Services.astro';
+import Spam_one from '../components/Spam_one.astro';
+import Spam_two from '../components/Spam_two.astro';
+import Condition from '../components/Condition.astro';
+import PropietiesCarousel from '../components/PropertiesCarousel.astro';
+import RentCarousel from '../components/RentCarousel.astro';
+import Card from '../components/Card.astro';
+
+const pageTitle = 'Sincronia Inmobiliaria';
+const pageSubtitle = 'Explora nuestros contenidos';
+const pageLogoUrl = '/path/to/your/logo.png';
+const pageVideoUrl = '/images/your-background-video.mp4';
+---
+
+<MainLayout title={pageTitle} subtitle={pageSubtitle} logoUrl={pageLogoUrl} videoUrl={pageVideoUrl}>
+  <Description />
+  <Services />
+  <Spam_one />
+  <Condition />
+  <PropietiesCarousel />
+  <RentCarousel />
+  <Spam_two />
+  <Card />
+</MainLayout>

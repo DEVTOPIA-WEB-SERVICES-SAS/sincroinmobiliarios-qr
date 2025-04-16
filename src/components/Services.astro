@@ -1,0 +1,364 @@
+---
+const services = [
+  {
+    title: "Actividad Inmobiliaria Nacional y Mundial",
+    description: [
+      "Real estate Word",
+      "Alianza Inmobiliaria",
+      "Cooperación valuatoria"
+    ],
+    imageUrl: "/images/service1.jpg",
+    buttonText: "Contáctanos Ahora",
+  },
+  {
+    title: "Plataforma inmobiliaria",
+    description: "Poner al servicio de los Usuarios: Arrendatarios y Arrendadores este mecanismo Tecnológico. para generar mejor dinámica en la actividad inmobiliaria, lo cual podrá enlazarse con otras redes Mundiales",
+    imageUrl: "/images/service2.webp",
+    buttonText: "Contáctanos Ahora",
+  },
+  {
+    title: "Turismo de bienes raíces",
+    description: "Planes turísticos para personas o empresas que previa asesoría y presentación de opciones han seleccionado destinos con proyectos atractivos para invertir",
+    imageUrl: "/images/service3.jpg",
+    buttonText: "Contáctanos Ahora",
+  },
+  {
+    title: "Mecanismo de accesibilidad",
+    description: [
+      "Se trata de elementos que le permitirán a los inmobiliarias facilitar la comunicación con sus usuarios",
+      "Puntos Ágil inmobiliarios",
+      "Contact Center Inmobiliario",
+      "Agilizador",
+    ],
+    imageUrl: "/images/service4.jpg",
+    buttonText: "Contáctanos Ahora",
+  },
+  {
+    title: "Marketing Inmobiliario",
+    description: [
+      "Videos inmobiliarios",
+      "Feria Inmobiliaria Virtual",
+      "Recorridos Virtuales Inmobiliarios",
+      "Generación y Administración de Redes Sociales",
+    ],
+    imageUrl: "/images/service5.jpg",
+    buttonText: "Contáctanos Ahora",
+  },
+  {
+    title: "Remates Judiciales",
+    description: [
+      "Bancos, Corporaciones y cooperativas de Créditos ",
+      "Juzgados Civil",
+      "F.N.A.",
+    ],
+    imageUrl: "/images/service6.jpg",
+    buttonText: "Contáctanos Ahora",
+  },
+  {
+    title: "Valoración y aseguramiento de inmuebles",
+    description: [
+      "Avalúos Comerciales de Inmuebles",
+      "Seguros inmobiliarios",
+      "Afianzamiento Inmobiliario",
+    ],
+    imageUrl: "/images/service7.jpg",
+    buttonText: "Contáctanos Ahora",
+  },
+  {
+    title: "Mecanización y seguridad para inmobiliarias",
+    description: [
+      "Contact Center Inmobiliario",
+      "Gestión de antecedentes judiciales y financieros de los posibles «arrendatarios",
+      "Oferta de inmuebles a través de QR",
+    ],
+    imageUrl: "/images/service8.jpg",
+    buttonText: "Contáctanos Ahora",
+  },
+  {
+    title: "Fotografía inmobiliaria",
+    description: [
+      "Fotografía 360°",
+      "Fotografía con Dron",
+      "Fotografía con primerísimo plano, primer plano y plano general",
+    ],
+    imageUrl: "/images/service9.jpg",
+    buttonText: "Contáctanos Ahora",
+  },
+  {
+    title: "Coworking",
+    description: [
+      "Arrendamientos de oficina por horas",
+      "Arrendamientos de equipo tecnológico",
+      "Arrendamientos de Kioscos informativos",
+    ],
+    imageUrl: "/images/service10.jpg",
+    buttonText: "Contáctanos Ahora",
+  },
+  {
+    title: "Furniture rental",
+    description: [
+      "Arrendamiento mobiliario habitacional",
+      "Arrendamiento mobiliario de oficina",
+      "Arrendamiento mobiliario comercial",
+    ],
+    imageUrl: "/images/service11.webp",
+    buttonText: "Contáctanos Ahora",
+  },
+  {
+    title: "Capacitación y asesoría",
+    description: [
+      "Estructuración de empresas inmobiliarias",
+      "Webinar, Cursos, Talleres, Diplomados",
+      "Asesoria contables, jurídicas.",
+      "Adecuaciones y preparaciones",
+    ],
+    imageUrl: "/images/service12.webp",
+    buttonText: "Contáctanos Ahora",
+  },
+];
+---
+
+<div class="services-accordion">
+  <h2 class="accordion-title">Servicios Insignes</h2>
+  {services.map((service, index) => (
+    <div class="service-item" id={`service-${index}`} >
+      <button class="service-header">
+        <h3 class="service-title">{service.title}</h3>
+        <span class="arrow">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+          </svg>
+        </span>
+      </button>
+      <div class="service-content">
+        <div class="service-info">
+          <div class="service-description">
+            {Array.isArray(service.description) ? (
+              <ul>
+                {service.description.map((item, idx) => (
+                  <li ><strong>{item}</strong></li>
+                ))}
+              </ul>
+            ) : (
+              <p><strong>{service.description}</strong></p>
+            )}
+            <button class="btn btn-primary">{service.buttonText}</button>
+          </div>
+          <div class="service-image">
+            <img src={service.imageUrl} alt={service.title} />
+          </div>
+        </div>
+      </div>
+    </div>
+  ))}
+</div>
+
+<script>
+  // Lógica para el acordeón
+  document.addEventListener("DOMContentLoaded", () => {
+    const serviceHeaders = document.querySelectorAll(".service-header");
+
+    serviceHeaders.forEach((header, index) => {
+      header.addEventListener("click", () => {
+        const serviceItem = header.closest('.service-item');
+        if (serviceItem) {
+          const serviceContent = serviceItem.querySelector(".service-content");
+          if (serviceContent) {
+            const arrow = header.querySelector(".arrow")
+            if(arrow){
+              const serviceContentElement = serviceContent as HTMLElement;
+              // Toggle de la clase activa
+              serviceItem.classList.toggle("active");
+              // Cambiar el texto de la flecha y mostrar/ocultar el contenido
+              if (serviceItem.classList.contains("active")) {
+                serviceContentElement.style.maxHeight = serviceContentElement.scrollHeight + "px";
+                arrow.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-up" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/>
+              </svg>`; // Flecha hacia arriba
+              } else {
+                serviceContentElement.style.maxHeight = "0";
+                arrow.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+              </svg>`; // Flecha hacia abajo
+              }
+            }
+          }
+        }
+      }); 
+    });
+  });
+</script>
+
+<style>
+  .services-accordion {
+    width: 100%;
+    max-width: 1100px;
+    margin: 20px auto;
+    padding: 0 20px;
+    
+  }
+
+  .accordion-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #6fae94;
+  margin-bottom: 20px;
+  text-align: center;
+  padding: 10px;
+}
+
+.service-item{
+    border-radius: 8px;
+}
+.service-item.active .service-content {
+  max-height: 500px; /* Ajusta la altura máxima */
+  padding: 20px;
+  background-color: #ebf4f1; /* Cambia este color al que desees */
+  border-left: 4px solid #84c3a8; /* Ejemplo: borde izquierdo */
+  border-radius: 0 0 8px 8px; /* Redondea solo las esquinas inferiores */
+}
+
+
+  .service-item {
+    border-bottom: 1px solid #becfc9;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .service-header {
+    width: 100%;
+    background-color: #ebf4f1;
+    border: none;
+    padding: 18px;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    border-radius: 8px; /* Ajusta el valor según tu preferencia */
+  }
+  .service-item.active .service-header {
+    /* ... otros estilos ... */
+    border-radius: 8px 8px 0 0;
+  }
+
+  .service-header:hover {
+    background-color: #e0e0e0;
+  }
+
+  .service-title {
+    margin: 0;
+    color: #6fae94
+  }
+
+  .arrow {
+    font-size: 1.4rem;
+    color: #555;
+    transition: transform 0.3s ease;
+    display: flex;
+    align-items: center;
+  }
+  .arrow svg{
+    width: 20px;
+    height: 20px;
+  }
+
+  .service-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    padding: 0 20px;
+  }
+
+  .service-item.active .service-content {
+    max-height: 500px; /* Ajusta la altura máxima */
+    padding: 20px;
+  }
+
+  .service-info {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .service-description {
+    flex: 1; /* Reducimos el espacio de la descripción */
+  }
+
+  .service-description p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+    color: #666;
+    font-weight: bold;
+    font-size: 0.9rem;
+  }
+
+  .service-description ul {
+    margin: 0;
+    padding-left: 20px;
+    color: #666;
+    font-size: 0.9rem;
+  }
+
+  .service-description li {
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+
+  .service-image {
+    flex: 2; /* Aumentamos el espacio de la imagen */
+    max-width: 800px; /* Aumentamos el tamaño máximo de la imagen */
+    text-align: center;
+  }
+
+  .service-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .btn {
+    padding: 12px 25px;
+    font-size: 1rem;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+  }
+
+  .btn-primary {
+    background-color: #84c3a8;
+    font-weight: bold;
+  }
+
+  .btn-primary:hover {
+    background-color: #6fae94;
+    transform: translateY(-3px);
+    font-weight: bold;
+  }
+
+  /* Media query para la responsividad */
+  @media (max-width: 768px) {
+    .service-info {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .service-image {
+      max-width: 100%;
+    }
+
+    .service-description {
+      margin-bottom: 20px;
+    }
+  }
+</style>

@@ -1,0 +1,118 @@
+---
+const { title, subtitle, logoUrl, videoUrl } = Astro.props;
+---
+
+<header>
+  <div class="header-content">
+    <img src="/images/logo.png" alt="Logo" class="logo" />
+    <h1>{title}</h1>
+    <p>Cali - Colombia  /  Miami - Estados Unidos</p>
+    <div class="buttons">
+      <button class="btn-primary">Línea Nacional</button>
+      <button class="btn-secondary">Línea Internacional</button>
+    </div>
+  </div>
+
+  <!-- Video de fondo -->
+  <video autoplay muted loop class="background-video">
+    <source src="/images/VIDEO-FONDO.mp4" type="video/mp4" />
+    Tu navegador no soporta videos.
+  </video>
+</header>
+
+<style>
+  header {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .header-content {
+    position: absolute;
+    top: 45%;
+    transform: translateY(-50%);
+    /* Add this line to center the content horizontally */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo {
+    max-width: 300px;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+  }
+
+  .buttons {
+    display: flex;
+    gap: 10px;
+    /* Add this line to center the buttons horizontally */
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+
+  .btn-primary {
+    background-color: #84c3a8;
+    border-radius: 5px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    background-color: #84c3a8;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+    
+  }
+
+  .btn-primary:hover, .btn-secondary:hover {
+      background-color: #6fae94;
+      transform: translateY(-3px);
+    }
+
+  .btn-secondary {
+    border-radius: 5px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    background-color: #84c3a8;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.5);
+    z-index: -1; 
+  }
+
+.video {
+  position: relative;
+  width: 100%;
+  height: auto;
+  /* El filtro brightness(0.5) oscurece el video. */
+  /* El filtro sepia(1) da un tinte cálido a la imagen, */
+  /* hue-rotate(120deg) cambia el color a un tono verde, y saturate(2) aumenta la intensidad del color. */
+}
+</style>
