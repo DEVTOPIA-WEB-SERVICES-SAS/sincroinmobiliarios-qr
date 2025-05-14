@@ -1,92 +1,169 @@
 <div class="hero">
-    <div class="hero-content">
-      <h2>¿Estás en busca del inmueble ideal?</h2>
-      <h3>Estamos aquí para ayudarte a encontrarlo.</h3>
-      <p>
-        Disponemos de una extensa selección de propiedades en arriendo y venta,
-        ubicadas en diversas ciudades de Colombia. Nuestro equipo está preparado
-        para atender tus necesidades, incluso a nivel internacional.
-      </p>
-      <h3>
-        ¡Descubre ahora los inmuebles disponibles y encuentra el que mejor se adapta
-        a ti!
-      </h3>
-      <div class="buttons">
-        <button class="btn-primary">Conoce todas las propiedades</button>
-        <button class="btn-secondary">Contáctanos ahora</button>
-      </div>
+  <div class="hero-content">
+    <h2>¿Estás en busca del inmueble ideal?</h2>
+    <h3>Estamos aquí para ayudarte a encontrarlo.</h3>
+    <p>
+      Disponemos de una extensa selección de propiedades en arriendo y venta,
+      ubicadas en diversas ciudades de Colombia. Nuestro equipo está preparado
+      para atender tus necesidades, incluso a nivel internacional.
+    </p>
+    <h3>
+      ¡Descubre ahora los inmuebles disponibles y encuentra el que mejor se
+      adapta a ti!
+    </h3>
+    <div class="buttons">
+      <a
+        href="https://sincroinmobiliarios.com/inmuebles/?search_location=102#results"
+        target="_blank"
+        style="text-decoration: none!important;"
+        class="btn-primary">Conoce todas las propiedades</a
+      >
+      <a
+        href="tel:+576023989665"
+        target="_blank"
+        style="text-decoration: none!important;"
+        class="btn-secondary">Contáctanos ahora</a
+      >
     </div>
-  
-    <img src="/images/service1.jpg" alt="Imagen de fondo" class="background-image" />
   </div>
-  
-  <style>
+
+  <img
+    src="/src/assets/images/home-banner-2.jpg"
+    alt="Imagen de fondo"
+    class="background-image"
+  />
+</div>
+
+<style>
+  .hero {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    flex-direction: column; /* Asegura que el contenido se apile verticalmente */
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 800px; /* Limita el ancho del contenido en pantallas grandes */
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  h2 {
+    font-size: 2.3rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    margin-top: 15px;
+  }
+
+  p {
+    font-size: 1rem;
+    margin: 10px 0;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Permite que los botones se ajusten en pantallas pequeñas */
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    border-radius: 5px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    background-color: #84c3a8;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .btn-primary:hover,
+  .btn-secondary:hover {
+    background-color: #6fae94;
+    transform: translateY(-3px);
+  }
+
+  .background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.5);
+    z-index: -1;
+  }
+
+  /* Media Queries */
+
+  /* Ajustes para pantallas medianas (tablets) */
+  @media (max-width: 768px) {
     .hero {
-      position: relative;
-      width: 100%;
-      height: 60vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: white;
-      text-align: center;
-      overflow: hidden;
+      height: 50vh; /* Reduce la altura del hero */
+      padding: 10px;
     }
-  
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      width: 100%;
-      padding: 20px;
-    }
-  
+
     h2 {
-      font-size: 2.3rem;
+      font-size: 2rem;
     }
-  
+
     h3 {
-      font-size: 1.5rem;
-      margin-top: 15px;
+      font-size: 1.3rem;
     }
-  
+
     p {
-      font-size: 1rem;
-      margin: 10px 0;
+      font-size: 0.9rem;
     }
-  
-    .buttons {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 20px;
-    }
-  
+
     .btn-primary,
     .btn-secondary {
-      border-radius: 5px;
-      padding: 10px 20px;
-      border: none;
-      cursor: pointer;
-      color: white;
-      background-color: #84c3a8;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 8px 16px; /* Reduce el tamaño de los botones */
+      font-size: 0.9rem;
     }
-  
-    .btn-primary:hover,
-    .btn-secondary:hover {
-      background-color: #6fae94;
-      transform: translateY(-3px);
-    }
-  
-    .background-image {
-      position: absolute;
-      top: 0;
-      left: 0;
+  }
+
+  /* Ajustes para pantallas pequeñas (móviles) */
+  @media (max-width: 480px) {
+    .hero {
+      height: 60vh; /* Reduce aún más la altura del hero */
       width: 100%;
-      height: 100%;
-      object-fit: cover;
-      filter: brightness(0.5);
-      z-index: -1;
     }
-  </style>
+
+    h2 {
+      font-size: 1.8rem;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+    }
+
+    p {
+      font-size: 0.8rem;
+    }
+
+    .buttons {
+      flex-direction: column; /* Apila los botones verticalmente */
+      gap: 15px;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      width: 100%; /* Botones ocupan todo el ancho disponible */
+      font-size: 0.8rem;
+    }
+  }
+</style>

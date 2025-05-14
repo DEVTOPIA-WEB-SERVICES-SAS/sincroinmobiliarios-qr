@@ -8,11 +8,12 @@ import Condition from '../components/Condition.astro';
 import PropietiesCarousel from '../components/PropertiesCarousel.astro';
 import RentCarousel from '../components/RentCarousel.astro';
 import Card from '../components/Card.astro';
+import ContactInfo from '../components/ContactInfo.astro';
 
-const pageTitle = 'Sincronia Inmobiliaria';
+const pageTitle = 'Sincronía Servicios Inmobiliarios';
 const pageSubtitle = 'Explora nuestros contenidos';
 const pageLogoUrl = '/path/to/your/logo.png';
-const pageVideoUrl = '/images/your-background-video.mp4';
+const pageVideoUrl = '../assets/images/your-background-video.mp4';
 ---
 
 <MainLayout title={pageTitle} subtitle={pageSubtitle} logoUrl={pageLogoUrl} videoUrl={pageVideoUrl}>
@@ -21,7 +22,7 @@ const pageVideoUrl = '/images/your-background-video.mp4';
   <Spam_one />
   <Condition />
   <PropietiesCarousel />
-  <RentCarousel />
+  <!-- <RentCarousel /> -->
   <Spam_two />
-  <Card />
+  <ContactInfo />
 </MainLayout>

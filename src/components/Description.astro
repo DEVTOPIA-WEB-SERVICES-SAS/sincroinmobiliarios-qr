@@ -1,124 +1,149 @@
----
----
-
 <div class="container">
-    <div class="content">
-      <!-- Lado izquierdo: Título, Descripción y Botones -->
-      <div class="left">
-        <h2 class="title">Sincronía Servicios Inmobiliarios</h2>
-        <p class="description">Es una marca con 12 años de experiencia en el mercado regional, ahora expandiéndose nivel nacional e internacional.
-            Ofrece servicios inmobiliarios para propietarios, agentes, inversionistas y más, con un equipo multidisciplinario que incluye abogados, contadores y brokers. 
-            Se destacan por su experiencia en transacciones de bienes raíces y su enfoque en satisfacer las necesidades de sus clientes.</p>
-        <div class="buttons">
-          <button class="btn btn-primary">Pedir Asesoria</button>
-          <button class="btn btn-secondary">Ver más</button>
-        </div>
-      </div>
-  
-      <!-- Lado derecho: Logo -->
-      <div class="right">
-        <img src="/images/logo-2.png" alt="Logo" class="logo" />
+  <div class="content">
+    <!-- Lado izquierdo: Título, Descripción y Botones -->
+    <div class="left">
+      <h2 class="title">Sincronía Servicios Inmobiliarios</h2>
+      <p class="description">
+        Es una marca con 12 años de experiencia en el mercado regional, ahora
+        expandiéndose nivel nacional e internacional. Ofrece servicios
+        inmobiliarios para propietarios, agentes, inversionistas y más, con un
+        equipo multidisciplinario que incluye abogados, contadores y brokers. Se
+        destacan por su experiencia en transacciones de bienes raíces y su
+        enfoque en satisfacer las necesidades de sus clientes.
+      </p>
+      <div class="buttons">
+        <a href="https://wa.me/+573009127079" target="_blank" class="btn btn-primary">Pedir Asesoria</a>
+        <a href="https://sincroinmobiliarios.com" target="_blank" class="btn btn-secondary">Ver más</a>
       </div>
     </div>
+
+    <!-- Lado derecho: Logo -->
+    <div class="right">
+      <img src="/src/assets/images/logo-2.png" alt="Logo" class="logo" />
+    </div>
   </div>
-  
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-  
-    body {
-      font-family: 'Arial', sans-serif;
-      background-color: #f4f7fb;
-      color: #333;
-    }
-  
-    .container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 40px;
-    }
-  
+</div>
+
+<style>
+  /* Contenedor principal */
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    width: 100%;
+    height: fit-content;
+    box-sizing: border-box;
+  }
+
+  /* Contenido */
+  .content {
+    display: flex;
+    flex-wrap: wrap; /* Elementos apilados en dispositivos pequeños */
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    max-width: 1000px;
+    width: 100%;
+  }
+
+  /* Sección izquierda */
+  .left {
+    flex: 1 1 100%; /* Ocupa todo el ancho por defecto */
+    max-width: 500px; /* Limita el ancho en pantallas grandes */
+    width: 100%;
+    padding: 20px;
+    text-align: center; /* Centrado en pantallas pequeñas */
+  }
+
+  /* Sección derecha */
+  .right {
+    flex: 1 1 100%; /* Ocupa todo el ancho por defecto */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Imagen del logo */
+  .logo {
+    max-width: 100%; /* Imagen responsiva */
+    height: auto;
+    max-width: 300px;
+  }
+
+  /* Títulos */
+  .title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  /* Descripción */
+  .description {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+
+  /* Botones */
+  .buttons {
+    display: flex;
+    flex-wrap: wrap; /* Botones se apilan si no hay espacio */
+    gap: 15px;
+    justify-content: center;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 5px;
+    background-color: #6fae94;
+    border: none;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .btn:hover {
+    background-color: #84c3a8;
+    transform: translateY(-2px);
+  }
+
+  /* Media Queries */
+  @media (min-width: 768px) {
     .content {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 20px;
-      max-width: 1000px;
-      width: 100%;
+      flex-wrap: nowrap; /* Elementos en línea */
     }
-  
-    .left {
-      flex: 1;
-      max-width: 500px;
-      width: 100%;
-      padding: 20px;
-      text-align: left;
-    }
-  
+
+    .left,
     .right {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      flex: 1; /* Ambos lados ocupan el mismo peso */
     }
-  
+
     .title {
       font-size: 2.5rem;
-      font-weight: bold;
-      margin-bottom: 15px;
-      color: #333;
-      text-transform: uppercase;
-      letter-spacing: 2px;
     }
-  
+
     .description {
       font-size: 1.1rem;
-      margin-bottom: 25px;
-      color: #666;
-      line-height: 1.6;
     }
-  
-    .buttons {
-      display: flex;
-      gap: 15px;
-    }
-  
-    .btn {
-      padding: 12px 25px;
-      font-size: 16px;
-      color: white;
-      border: none;
-      cursor: pointer;
-      border-radius: 5px;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-  
-    .btn-primary {
-      background-color: #84c3a8;
-    }
-  
-    .btn-primary:hover {
-      background-color: #6fae94;
-      transform: translateY(-3px);
-    }
-  
-    .btn-secondary {
-      background-color: #84c3a8;
-    }
-  
-    .btn-secondary:hover {
-      background-color: #6fae94;
-      transform: translateY(-3px);
-    }
-  
+
     .logo {
       max-width: 400px;
-      height: auto;
-      border-radius: 100%; /* Remove this line */
     }
-  </style>
+  }
+
+  @media (max-width: 480px) {
+    .title {
+      font-size: 1.8rem;
+    }
+
+    .description {
+      font-size: 0.9rem;
+    }
+
+    .btn {
+      padding: 8px 16px;
+      font-size: 14px;
+    }
+  }
+</style>

@@ -1,0 +1,79 @@
+
+<div class="contact-cards">
+  <div class="card">
+    <h3><b>Linea nacional e internacional</b></h3>
+    <div class="buttons">
+      <a href="http://wa.me/+573009127323" style="text-decoration: none!important;"><img style="width: 50px; height: 50px;" src="/src/assets/images/phone-icon.svg" alt="Phone" /></a>
+      <p><b>+1 (786)-297-8223</b><br/> Miami - Estados Unidos</p><br/>
+    </div>
+    <div class="buttons">
+      <a href="http://wa.me/+573009127323" style="text-decoration: none!important;"><img style="width: 50px; height: 50px;" src="/src/assets/images/phone-icon.svg" alt="Phone" /></a>
+      <p><b>+57 (602) 3989665</b><br/> Cali - Colombia</p><br/>
+    </div>
+    <h3><b>Escribenos a nuestro correo o WhatsApp</b></h3>
+    <div class="buttons">
+      <a href="http://wa.me/+573009127323" style="text-decoration: none!important;"><img style="width: 50px; height: 50px;" src="/src/assets/images/whatsapp-green.svg" alt="WhatsApp" /></a>
+      <a href="mailto:sincronia@sincroinmobiliarios.com" style="text-decoration: none!important;"><img style="width: 50px; height: 50px;" src="/src/assets/images/mail-green.svg" alt="Email" /></a>
+    </div>
+  </div>
+  <div class="card">
+    <h3><b>Contactanos en nuestros canales de atención</b></h3>
+    <div class="buttons">
+      <a href="www.sincroinmobiliarios.com" style="text-decoration: none!important;"><img style="width: 50px; height: 50px;" src="/src/assets/images/web-green.svg" alt="Web" /></a>
+      <p><b><b>www.sincroinmobiliarios.com</b></p><br/>
+    </div>
+    <h3><b>Redes Sociales</b></h3>
+    <div class="buttons">
+      <a href="https://www.facebook.com/profile.php?id=100070303461303" target="_blank" style="text-decoration: none!important;"><img style="width: 50px; height: 50px;" src="/src/assets/images/facebook.svg" alt="Facebook" /></a>
+      <a href="https://www.instagram.com/sincronia_123/" target="_blank" style="text-decoration: none!important;"><img style="width: 50px; height: 50px;" src="/src/assets/images/instagram.svg" alt="Instagram" /></a>
+      <a href="http://wa.me/+573009127079" target="_blank" style="text-decoration: none!important;"><img style="width: 50px; height: 50px;" src="/src/assets/images/whatsapp-green.svg" alt="WhatsApp" /></a>
+    </div>
+  </div>
+</div>
+
+<style>
+.contact-cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  flex-wrap: wrap; /* Permite que las tarjetas se envuelvan en dispositivos pequeños */
+}
+
+.card {
+  border: 1px solid #ccc;
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  flex: 1 1 calc(50% - 40px); /* Ajusta el ancho en dispositivos más grandes */
+  max-width: 400px; /* Limita el tamaño máximo */
+}
+
+.buttons img {
+  max-width: 100%;
+  height: auto; /* Asegura que los íconos sean responsivos */
+}
+
+@media (max-width: 768px) {
+  .card {
+    flex: 1 1 100%; /* En dispositivos medianos, cada tarjeta ocupa todo el ancho */
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-cards {
+    gap: 10px; /* Reduce el espacio entre las tarjetas en dispositivos pequeños */
+    padding: 10px;
+  }
+
+  .card {
+    padding: 15px; /* Reduce el padding interno para ahorrar espacio */
+  }
+
+  .buttons img {
+    width: 40px; /* Reduce el tamaño de los íconos en dispositivos pequeños */
+    height: 40px;
+  }
+}
+</style>

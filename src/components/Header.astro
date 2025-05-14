@@ -4,18 +4,24 @@ const { title, subtitle, logoUrl, videoUrl } = Astro.props;
 
 <header>
   <div class="header-content">
-    <img src="/images/logo.png" alt="Logo" class="logo" />
+    <img src="/src/assets/images/logo-2.png" alt="Logo" class="logo" />
     <h1>{title}</h1>
+    <div class="buttons">
+      <a href="http://wa.me/+573009127323" style="text-decoration: none!important;"><img style="width: 50px; height: 50px;" src="/src/assets/images/whatsapp-white.svg" alt="WhatsApp" /></a>
+      <a href="https://www.instagram.com/sincronia_123/" style="text-decoration: none!important;"><img style="width: 50px; height: 50px;" src="/src/assets/images/instagram-outline.svg" alt="Instagram" /></a>
+      <a href="https://www.facebook.com/profile.php?id=100070303461303" style="text-decoration: none!important;"><img style="width: 50px; height: 50px;" src="/src/assets/images/facebook-outline.svg" alt="Facebook" /></a>
+      <a href="mailto:sincronia@sincroinmobiliarios.com" style="text-decoration: none!important;"><img style="width: 50px; height: 50px;" src="/src/assets/images/mail-outline.svg" alt="Email" /></a>
+    </div><br/>
     <p>Cali - Colombia  /  Miami - Estados Unidos</p>
     <div class="buttons">
-      <button class="btn-primary">Línea Nacional</button>
-      <button class="btn-secondary">Línea Internacional</button>
+      <a href="tel:+576023989665" class="btn-primary" style="text-decoration: none!important;">Línea Nacional</a>
+      <a href="tel:+17862978223" class="btn-secondary" style="text-decoration: none!important;">Línea Internacional</a>
     </div>
   </div>
 
   <!-- Video de fondo -->
   <video autoplay muted loop class="background-video">
-    <source src="/images/VIDEO-FONDO.mp4" type="video/mp4" />
+    <source src="/src/assets/images/VIDEO-FONDO.mp4" type="video/mp4" />
     Tu navegador no soporta videos.
   </video>
 </header>

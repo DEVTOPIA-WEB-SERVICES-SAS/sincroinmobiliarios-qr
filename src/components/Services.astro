@@ -7,19 +7,19 @@ const services = [
       "Alianza Inmobiliaria",
       "Cooperación valuatoria"
     ],
-    imageUrl: "/images/service1.jpg",
+    imageUrl: "/src/assets/images/service1.jpg",
     buttonText: "Contáctanos Ahora",
   },
   {
     title: "Plataforma inmobiliaria",
     description: "Poner al servicio de los Usuarios: Arrendatarios y Arrendadores este mecanismo Tecnológico. para generar mejor dinámica en la actividad inmobiliaria, lo cual podrá enlazarse con otras redes Mundiales",
-    imageUrl: "/images/service2.webp",
+    imageUrl: "/src/assets/images/service2.webp",
     buttonText: "Contáctanos Ahora",
   },
   {
     title: "Turismo de bienes raíces",
     description: "Planes turísticos para personas o empresas que previa asesoría y presentación de opciones han seleccionado destinos con proyectos atractivos para invertir",
-    imageUrl: "/images/service3.jpg",
+    imageUrl: "/src/assets/images/service3.jpg",
     buttonText: "Contáctanos Ahora",
   },
   {
@@ -30,7 +30,7 @@ const services = [
       "Contact Center Inmobiliario",
       "Agilizador",
     ],
-    imageUrl: "/images/service4.jpg",
+    imageUrl: "/src/assets/images/service4.jpg",
     buttonText: "Contáctanos Ahora",
   },
   {
@@ -41,7 +41,7 @@ const services = [
       "Recorridos Virtuales Inmobiliarios",
       "Generación y Administración de Redes Sociales",
     ],
-    imageUrl: "/images/service5.jpg",
+    imageUrl: "/src/assets/images/service5.jpg",
     buttonText: "Contáctanos Ahora",
   },
   {
@@ -51,7 +51,7 @@ const services = [
       "Juzgados Civil",
       "F.N.A.",
     ],
-    imageUrl: "/images/service6.jpg",
+    imageUrl: "/src/assets/images/service6.jpg",
     buttonText: "Contáctanos Ahora",
   },
   {
@@ -61,7 +61,7 @@ const services = [
       "Seguros inmobiliarios",
       "Afianzamiento Inmobiliario",
     ],
-    imageUrl: "/images/service7.jpg",
+    imageUrl: "/src/assets/images/service7.jpg",
     buttonText: "Contáctanos Ahora",
   },
   {
@@ -71,7 +71,7 @@ const services = [
       "Gestión de antecedentes judiciales y financieros de los posibles «arrendatarios",
       "Oferta de inmuebles a través de QR",
     ],
-    imageUrl: "/images/service8.jpg",
+    imageUrl: "/src/assets/images/service8.jpg",
     buttonText: "Contáctanos Ahora",
   },
   {
@@ -81,7 +81,7 @@ const services = [
       "Fotografía con Dron",
       "Fotografía con primerísimo plano, primer plano y plano general",
     ],
-    imageUrl: "/images/service9.jpg",
+    imageUrl: "/src/assets/images/service9.jpg",
     buttonText: "Contáctanos Ahora",
   },
   {
@@ -91,7 +91,7 @@ const services = [
       "Arrendamientos de equipo tecnológico",
       "Arrendamientos de Kioscos informativos",
     ],
-    imageUrl: "/images/service10.jpg",
+    imageUrl: "/src/assets/images/service10.jpg",
     buttonText: "Contáctanos Ahora",
   },
   {
@@ -101,7 +101,7 @@ const services = [
       "Arrendamiento mobiliario de oficina",
       "Arrendamiento mobiliario comercial",
     ],
-    imageUrl: "/images/service11.webp",
+    imageUrl: "/src/assets/images/service11.webp",
     buttonText: "Contáctanos Ahora",
   },
   {
@@ -112,7 +112,7 @@ const services = [
       "Asesoria contables, jurídicas.",
       "Adecuaciones y preparaciones",
     ],
-    imageUrl: "/images/service12.webp",
+    imageUrl: "/src/assets/images/service12.webp",
     buttonText: "Contáctanos Ahora",
   },
 ];
@@ -142,7 +142,7 @@ const services = [
             ) : (
               <p><strong>{service.description}</strong></p>
             )}
-            <button class="btn btn-primary">{service.buttonText}</button>
+            <a href="http://wa.me/+573009127079" target="_blank" style="text-decoration: none!important;" class="btn btn-primary">{service.buttonText}</a>
           </div>
           <div class="service-image">
             <img src={service.imageUrl} alt={service.title} />
@@ -223,6 +223,7 @@ const services = [
     border-bottom: 1px solid #becfc9;
     overflow: hidden;
     transition: all 0.3s ease;
+    width: 90%;
   }
 
   .service-header {
