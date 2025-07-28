@@ -1,16 +1,55 @@
 ---
-
 const properties = [
-  { url:"https://sincroinmobiliarios.com/inmueble/si0008/", image: "https://sincroinmobiliarios.com/wp-content/uploads/2024/10/SI008.jpg.webp", alt: "Terreno Barrio la Yesquita" },
-  { url:"https://sincroinmobiliarios.com/inmueble/casa-el-jardin/", image: "https://sincroinmobiliarios.com/wp-content/uploads/2024/10/SI003.jpg.webp", alt: "Casa El Jardín" },
-  { url:"https://sincroinmobiliarios.com/inmueble/casa-el-jardin-sector-coliseo/", image: "https://sincroinmobiliarios.com/wp-content/uploads/2024/10/SI004.jpg.webp", alt: "Casa el Jardín Sector Coliseo" },
-  { url:"https://sincroinmobiliarios.com/inmueble/si0005/", image: "https://sincroinmobiliarios.com/wp-content/uploads/2024/10/SI005.jpg.webp", alt: "Apartamento Villa del Sol" },
+  {
+    url: "https://sincroinmobiliarios.com/inmueble/si0008/",
+    image:
+      "https://sincroinmobiliarios.com/wp-content/uploads/2024/10/SI008.jpg.webp",
+    alt: "Terreno Barrio la Yesquita",
+  },
+  {
+    url: "https://sincroinmobiliarios.com/inmueble/casa-el-jardin/",
+    image:
+      "https://sincroinmobiliarios.com/wp-content/uploads/2024/10/SI003.jpg.webp",
+    alt: "Casa El Jardín",
+  },
+  {
+    url: "https://sincroinmobiliarios.com/inmueble/casa-el-jardin-sector-coliseo/",
+    image:
+      "https://sincroinmobiliarios.com/wp-content/uploads/2024/10/SI004.jpg.webp",
+    alt: "Casa el Jardín Sector Coliseo",
+  },
+  {
+    url: "https://sincroinmobiliarios.com/inmueble/si0005/",
+    image:
+      "https://sincroinmobiliarios.com/wp-content/uploads/2024/10/SI005.jpg.webp",
+    alt: "Apartamento Villa del Sol",
+  },
 ];
 const rent_properties = [
-  { url:"https://sincroinmobiliarios.com/inmueble/b-jardin-sector-la-19a-apto-202/", image: "https://sincroinmobiliarios.com/wp-content/uploads/2025/04/2.jpg.webp", alt: "B/ Jardin Sector la 19a - APTO #202" },
-  { url:"https://sincroinmobiliarios.com/inmueble/julio-figueroa-villa-apto-302/", image: "https://sincroinmobiliarios.com/wp-content/uploads/2024/10/1-5.jpg.webp", alt: "Julio Figueroa Villa APTO -# 302" },
-  { url:"https://sincroinmobiliarios.com/inmueble/silencio-carrera10ma-casa-101/", image: "https://sincroinmobiliarios.com/wp-content/uploads/2024/10/SI9373-Casa-102-Barrio-Silencio.jpg.webp", alt: "Silencio Carrera10ma CASA # 101" },
-  { url:"https://sincroinmobiliarios.com/inmueble/silencio-carrera10ma-casa-102/", image: "https://sincroinmobiliarios.com/wp-content/uploads/2024/10/1-14.jpg.webp", alt: "Silencio Carrera10ma CASA #102" },
+  {
+    url: "https://sincroinmobiliarios.com/inmueble/b-jardin-sector-la-19a-apto-202/",
+    image:
+      "https://sincroinmobiliarios.com/wp-content/uploads/2025/04/2.jpg.webp",
+    alt: "B/ Jardin Sector la 19a - APTO #202",
+  },
+  {
+    url: "https://sincroinmobiliarios.com/inmueble/julio-figueroa-villa-apto-302/",
+    image:
+      "https://sincroinmobiliarios.com/wp-content/uploads/2024/10/1-5.jpg.webp",
+    alt: "Julio Figueroa Villa APTO -# 302",
+  },
+  {
+    url: "https://sincroinmobiliarios.com/inmueble/silencio-carrera10ma-casa-101/",
+    image:
+      "https://sincroinmobiliarios.com/wp-content/uploads/2024/10/SI9373-Casa-102-Barrio-Silencio.jpg.webp",
+    alt: "Silencio Carrera10ma CASA # 101",
+  },
+  {
+    url: "https://sincroinmobiliarios.com/inmueble/silencio-carrera10ma-casa-102/",
+    image:
+      "https://sincroinmobiliarios.com/wp-content/uploads/2024/10/1-14.jpg.webp",
+    alt: "Silencio Carrera10ma CASA #102",
+  },
 ];
 ---
 
@@ -20,23 +59,38 @@ const rent_properties = [
   <div class="carousel-container">
     <!-- Botón anterior -->
     <button class="prev-button" aria-label="Propiedad Anterior">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M15.41 7.41L10.83 12l4.58 4.59L14 18l-6-6 6-6 1.41 1.41z"></path>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+      >
+        <path d="M15.41 7.41L10.83 12l4.58 4.59L14 18l-6-6 6-6 1.41 1.41z"
+        ></path>
       </svg>
     </button>
 
     <div class="carousel" role="region" aria-label="Carrusel de propiedades">
-      {properties.map((property, index) => (
-        <div class="carousel-item" key={index}>
-          <img src={property.image} alt={property.alt} loading="lazy" />
-          <p><a style="color: #6fae94;" href={property.url} target="_blank"><b>{property.alt}</b></a></p>
-        </div>
-      ))}
+      {
+        properties.map((property, index) => (
+          <div class="carousel-item" key={index}>
+            <img src={property.image} alt={property.alt} loading="lazy" />
+            <p>
+              <a style="color: #6fae94;" href={property.url} target="_blank">
+                <b>{property.alt}</b>
+              </a>
+            </p>
+          </div>
+        ))
+      }
     </div>
 
     <!-- Botón siguiente -->
     <button class="next-button" aria-label="Propiedad Siguiente">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+      >
         <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"></path>
       </svg>
     </button>
@@ -46,23 +100,38 @@ const rent_properties = [
   <div class="carousel-container">
     <!-- Botón anterior -->
     <button class="prev-button" aria-label="Propiedad Anterior">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M15.41 7.41L10.83 12l4.58 4.59L14 18l-6-6 6-6 1.41 1.41z"></path>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+      >
+        <path d="M15.41 7.41L10.83 12l4.58 4.59L14 18l-6-6 6-6 1.41 1.41z"
+        ></path>
       </svg>
     </button>
 
     <div class="carousel" role="region" aria-label="Carrusel de propiedades">
-      {rent_properties.map((property, index) => (
-        <div class="carousel-item" key={index}>
-          <img src={property.image} alt={property.alt} loading="lazy" />
-          <p><a style="color: #6fae94;" href={property.url} target="_blank"><b>{property.alt}</b></a></p>
-        </div>
-      ))}
+      {
+        rent_properties.map((property, index) => (
+          <div class="carousel-item" key={index}>
+            <img src={property.image} alt={property.alt} loading="lazy" />
+            <p>
+              <a style="color: #6fae94;" href={property.url} target="_blank">
+                <b>{property.alt}</b>
+              </a>
+            </p>
+          </div>
+        ))
+      }
     </div>
 
     <!-- Botón siguiente -->
     <button class="next-button" aria-label="Propiedad Siguiente">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+      >
         <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"></path>
       </svg>
     </button>
@@ -77,25 +146,24 @@ const rent_properties = [
     text-align: center;
   }
 
-  .carousel-container {
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-  }
+.carousel-container {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
 
-  .carousel {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-    width: 100%;
-  }
+.carousel {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+  will-change: transform;
+}
 
-  .carousel-item {
-    flex: 0 0 33.33%;
-    max-width: 33.33%;
-    padding: 10px;
-    box-sizing: border-box;
-  }
+.carousel-item {
+  flex: 0 0 33.3333%; /* Esto muestra 3 ítems por fila */
+  box-sizing: border-box;
+  padding: 0 10px; /* opcional: espacio entre ítems */
+}
+
 
   .carousel-item img {
     width: 100%;
@@ -164,30 +232,50 @@ const rent_properties = [
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    const carousel = document.querySelector(".carousel");
-    const carouselItems = document.querySelectorAll(".carousel-item");
-    const prevButton = document.querySelector(".prev-button");
-    const nextButton = document.querySelector(".next-button");
+    const carouselContainers = document.querySelectorAll(".carousel-container");
 
-    let counter = 0;
+    carouselContainers.forEach((container) => {
+      const carousel = container.querySelector(".carousel");
+      const carouselItems = container.querySelectorAll(".carousel-item");
+      const prevButton = container.querySelector(".prev-button");
+      const nextButton = container.querySelector(".next-button");
 
-    function updateCarousel() {
-      const width = carouselItems[0].offsetWidth;
-      const translateValue = -(counter * width);
-      carousel.style.transform = `translateX(${translateValue}px)`;
-    }
+      let counter = 0;
 
-    prevButton.addEventListener("click", () => {
-      counter = (counter - 1 + carouselItems.length) % carouselItems.length;
+      function updateCarousel() {
+        const itemWidth = carouselItems[0].offsetWidth;
+        const translateValue = -(counter * itemWidth);
+        carousel.style.transform = `translateX(${translateValue}px)`;
+
+        // Desactivar los botones al llegar al inicio o final
+        prevButton.disabled = counter === 0;
+        nextButton.disabled = counter >= carouselItems.length - visibleItems();
+      }
+
+      // Calcula cuántos ítems caben en pantalla actualmente
+      function visibleItems() {
+        const containerWidth = container.offsetWidth;
+        const itemWidth = carouselItems[0].offsetWidth;
+        return Math.floor(containerWidth / itemWidth);
+      }
+
+      prevButton.addEventListener("click", () => {
+        if (counter > 0) {
+          counter--;
+          updateCarousel();
+        }
+      });
+
+      nextButton.addEventListener("click", () => {
+        const maxOffset = carouselItems.length - visibleItems();
+        if (counter < maxOffset) {
+          counter++;
+          updateCarousel();
+        }
+      });
+
+      window.addEventListener("resize", updateCarousel);
       updateCarousel();
     });
-
-    nextButton.addEventListener("click", () => {
-      counter = (counter + 1) % carouselItems.length;
-      updateCarousel();
-    });
-
-    window.addEventListener("resize", updateCarousel);
-    updateCarousel();
   });
 </script>
